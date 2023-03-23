@@ -5,6 +5,11 @@
   "main": "src/index.js",
   "author": "Prince C. Onukwili",
   "license": "MIT",
+  "scripts": {
+    "start": "gopack start",
+    "serve": "gopack serve",
+    "build": "gopack build"
+  },
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
