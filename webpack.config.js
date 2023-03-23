@@ -3,7 +3,7 @@ const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
-const gopackConfig = require("./../../gopack.config");
+const gopackConfig = require("./gopack.config");
 
 //MODE
 let mode = "development";

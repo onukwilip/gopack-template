@@ -1,4 +1,4 @@
-const gopackConfig = require("./../../gopack.config");
+const gopackConfig = require("./gopack.config");
 
 const reactRefresh =
   process.env.MODE === "production" ? [] : ["react-refresh/babel"];
