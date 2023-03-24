@@ -9,6 +9,7 @@ module.exports = {
   // },
   // outputFilenameFormat: "[name].chunk.js",
   // outputFilename: "main.js",
+  // outputFolder: "public",
   // pages: [
   //   {
   //     template: path.resolve(__dirname, "src/index.html"),

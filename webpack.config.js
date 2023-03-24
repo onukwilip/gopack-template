@@ -42,7 +42,7 @@ const output = {
   filename: gopackConfig?.entry
     ? gopackConfig?.outputFilenameFormat || "[name].bundle.js"
     : gopackConfig?.outputFilename || "bundle.js",
-  path: path.resolve("public"),
+  path: path.resolve(gopackConfig?.outputFolder || "public"),
   assetModuleFilename: `${
     gopackConfig?.assetsFolder || "images"
   }/[hash][ext][query]`,
