@@ -17,7 +17,7 @@ const htmlPlugins =
     ? gopackConfig?.pages?.map((page) => new HTMLWebpackPlugin(page))
     : [
         new HTMLWebpackPlugin({
-          template: path.resolve(gopackConfig?.path, "src/index.html"),
+          template: path.resolve("./src/index.html"),
         }),
       ];
 
@@ -36,18 +36,21 @@ if (process.env.MODE === "production") {
 //OPTIONS
 
 //ENTRY
-const entry =
-  gopackConfig?.entry || path.resolve(gopackConfig?.path, "src/index.js");
+const entry = gopackConfig?.entry || `./src/index.js`;
 //OUTPUT
 const output = {
-  filename: gopackConfig?.entry ? "[name].bundle.js" : "bundle.js",
-  path: path.resolve(gopackConfig?.path, "public"),
-  assetModuleFilename: "images/[hash][ext][query]",
+  filename: gopackConfig?.entry
+    ? gopackConfig?.outputFilenameFormat || "[name].bundle.js"
+    : gopackConfig?.outputFilename || "bundle.js",
+  path: path.resolve("public"),
+  assetModuleFilename: `${
+    gopackConfig?.assetsFolder || "images"
+  }/[hash][ext][query]`,
   clean: true,
 };
 //DEV SERVER
 const devServer = {
-  static: path.resolve(gopackConfig?.path, "public"),
+  static: path.resolve("public"),
   hot: true,
 };
 //DEV TOOL
